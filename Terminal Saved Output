@@ -1,0 +1,905 @@
+Last login: Tue Nov  5 18:36:21 on console
+Simones-MacBook-Pro:~ Simone$ cd Documents/Simone/Python
+Simones-MacBook-Pro:Python Simone$ ls
+1.1.4.py			test-sublime-input.py
+Book python crash course	test.py
+Curso_Fuctura			test03.py
+Youtube lectures		test04.py
+aulas-python3			test5.py
+function.test.py		test6.py
+idle.py				testandonovopython.py
+ipython.py			teste.py
+ipythoninstall.py		testinput.py
+sublime.py			testinput2.py
+sublimecheckversion.py		untitled0.py
+sublimetest.py			untitled1.py
+sys.executable.py		untitled5.py
+tempCodeRunnerFile.py		upper_test.py
+test-pythonREPL.py		vscode-test.py
+Simones-MacBook-Pro:Python Simone$ cd Curso_Fuctura
+Simones-MacBook-Pro:Curso_Fuctura Simone$ ls
+Modulo_1	Modulo_2	venv
+Simones-MacBook-Pro:Curso_Fuctura Simone$ cd Modulo_2
+Simones-MacBook-Pro:Modulo_2 Simone$ ls
+Aula_1	Aula_2	Aula_3	Aula_4	Aula_6
+Simones-MacBook-Pro:Modulo_2 Simone$ mkdir projeto
+Simones-MacBook-Pro:Modulo_2 Simone$ ls
+Aula_1	Aula_2	Aula_3	Aula_4	Aula_6	projeto
+Simones-MacBook-Pro:Modulo_2 Simone$ cd projeto
+Simones-MacBook-Pro:projeto Simone$ ls
+Simones-MacBook-Pro:projeto Simone$ pipenv install
+Creating a virtualenv for this project…
+Pipfile: /Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/Pipfile
+Using /Library/Frameworks/Python.framework/Versions/3.7/bin/python3 (3.7.4) to create virtualenv…
+⠦ Creating virtual environment...Already using interpreter /Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+Using base prefix '/Library/Frameworks/Python.framework/Versions/3.7'
+New python executable in /Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/bin/python3
+Also creating executable in /Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/bin/python
+Installing setuptools, pip, wheel...
+done.
+
+✔ Successfully created virtual environment! 
+Virtualenv location: /Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r
+Creating a Pipfile for this project…
+Pipfile.lock not found, creating…
+Locking [dev-packages] dependencies…
+Locking [packages] dependencies…
+Updated Pipfile.lock (a65489)!
+Installing dependencies from Pipfile.lock (a65489)…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 0/0 — 00:00:00
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Simones-MacBook-Pro:projeto Simone$ pipenv install django
+Installing django…
+Adding django to Pipfile's [packages]…
+✔ Installation Succeeded 
+Pipfile.lock (4f9dd2) out of date, updating to (a65489)…
+Locking [dev-packages] dependencies…
+Locking [packages] dependencies…
+✔ Success! 
+Updated Pipfile.lock (4f9dd2)!
+Installing dependencies from Pipfile.lock (4f9dd2)…
+  🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 3/3 — 00:00:01
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Simones-MacBook-Pro:projeto Simone$ ls
+Pipfile		Pipfile.lock
+Simones-MacBook-Pro:projeto Simone$ django-admin startproject home_stock
+-bash: django-admin: command not found
+Simones-MacBook-Pro:projeto Simone$ pipenv shell
+Launching subshell in virtual environment…
+bash-3.2$  . /Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/bin/activate
+(projeto) bash-3.2$ django-admin startproject home_stock
+(projeto) bash-3.2$ ls
+Pipfile		Pipfile.lock	home_stock
+(projeto) bash-3.2$ rm home_stock
+rm: home_stock: is a directory
+(projeto) bash-3.2$ rm -rf home_stock
+(projeto) bash-3.2$ django-admin startproject home_stock .
+(projeto) bash-3.2$ ls
+Pipfile		Pipfile.lock	home_stock	manage.py
+(projeto) bash-3.2$ django-admin startapp core
+(projeto) bash-3.2$ ls
+Pipfile		Pipfile.lock	core		home_stock	manage.py
+(projeto) bash-3.2$ makemigrations core
+bash: makemigrations: command not found
+(projeto) bash-3.2$ cd core
+(projeto) bash-3.2$ ls
+__init__.py	apps.py		models.py	views.py
+admin.py	migrations	tests.py
+(projeto) bash-3.2$ python manage.py makemigrations
+python: can't open file 'manage.py': [Errno 2] No such file or directory
+(projeto) bash-3.2$ cd../
+bash: cd../: No such file or directory
+(projeto) bash-3.2$ cd nn
+bash: cd: nn: No such file or directory
+(projeto) bash-3.2$ cd ..
+(projeto) bash-3.2$ ls
+Pipfile		Pipfile.lock	core		home_stock	manage.py
+(projeto) bash-3.2$ python manage.py makemigrations
+No changes detected
+(projeto) bash-3.2$ python manage.py makemigrations core
+No installed app with label 'core'.
+(projeto) bash-3.2$ ls
+Pipfile		core		home_stock
+Pipfile.lock	db.sqlite3	manage.py
+(projeto) bash-3.2$ python manage.py makemigrations
+No changes detected
+(projeto) bash-3.2$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+(projeto) bash-3.2$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:15:37
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:15:48] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:15:48] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[05/Nov/2019 23:15:48] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[05/Nov/2019 23:15:48] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[05/Nov/2019 23:15:48] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[05/Nov/2019 23:15:53] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:15:55] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:15:55] "GET /admin/ HTTP/1.1" 302 0
+[05/Nov/2019 23:15:55] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1819
+[05/Nov/2019 23:15:55] "GET /static/admin/css/base.css HTTP/1.1" 200 16378
+[05/Nov/2019 23:15:55] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17944
+[05/Nov/2019 23:15:55] "GET /static/admin/css/login.css HTTP/1.1" 200 1233
+[05/Nov/2019 23:15:56] "GET /admin/ HTTP/1.1" 302 0
+[05/Nov/2019 23:15:56] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1819
+^C(projeto) bash-3.2$ ls
+Pipfile		core		home_stock
+Pipfile.lock	db.sqlite3	manage.py
+(projeto) bash-3.2$ python manage.py createsuperuser
+Username (leave blank to use 'simone'): Simone
+Email address: simone_nascimentoo@hotmail.com
+Password: 
+Password (again): 
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: N        
+Password: 
+Password (again): 
+Superuser created successfully.
+(projeto) bash-3.2$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:19:28
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:19:37] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:37] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:19:40] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:19:41] "GET / HTTP/1.1" 200 16348
+Not Found: /admin/blog/post/
+[05/Nov/2019 23:19:41] "GET /admin/blog/post/ HTTP/1.1" 404 3723
+Not Found: /favicon.ico
+[05/Nov/2019 23:19:41] "GET /favicon.ico HTTP/1.1" 404 1976
+[05/Nov/2019 23:19:42] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:42] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:42] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:42] "GET /admin/ HTTP/1.1" 302 0
+[05/Nov/2019 23:19:42] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1819
+[05/Nov/2019 23:19:43] "GET /admin/ HTTP/1.1" 302 0
+[05/Nov/2019 23:19:43] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1819
+[05/Nov/2019 23:19:43] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:43] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:43] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[05/Nov/2019 23:19:51] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[05/Nov/2019 23:19:51] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:19:51] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[05/Nov/2019 23:19:51] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[05/Nov/2019 23:19:51] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+Not Found: /favicon.ico
+[05/Nov/2019 23:19:51] "GET /favicon.ico HTTP/1.1" 404 1976
+[05/Nov/2019 23:20:05] "GET /admin/auth/group/ HTTP/1.1" 200 3503
+[05/Nov/2019 23:20:05] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[05/Nov/2019 23:20:05] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6918
+[05/Nov/2019 23:20:05] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 271817
+[05/Nov/2019 23:20:05] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[05/Nov/2019 23:20:05] "GET /static/admin/js/actions.js HTTP/1.1" 200 6766
+[05/Nov/2019 23:20:05] "GET /static/admin/js/core.js HTTP/1.1" 200 7099
+[05/Nov/2019 23:20:05] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:20:05] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1530
+[05/Nov/2019 23:20:05] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[05/Nov/2019 23:20:05] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8941
+[05/Nov/2019 23:20:05] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[05/Nov/2019 23:20:05] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+Not Found: /favicon.ico
+[05/Nov/2019 23:20:05] "GET /favicon.ico HTTP/1.1" 404 1976
+^C(projeto) bash-3.2 python manage.py makemigrations core
+No installed app with label 'core'.
+(projeto) bash-3.2$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+(projeto) bash-3.2$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:23:03
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:23:13] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:23:17] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:23:20] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:23:22] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:23:24] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:23:24] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:24:40] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /admin/ HTTP/1.1" 200 3043
+[05/Nov/2019 23:24:40] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:24:40] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/commands/runserver.py", line 109, in inner_run
+    autoreload.raise_last_exception()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 77, in raise_last_exception
+    raise _exception[1]
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/__init__.py", line 337, in execute
+    autoreload.check_errors(django.setup)()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/apps/config.py", line 116, in create
+    mod = import_module(mod_path)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 962, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'core.apps.CoreConfigdjango'; 'core.apps' is not a package
+
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:27:08
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:29:20] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:29:20] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:29:20] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:29:20] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:29:20] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:21] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:21] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:21] "GET /admin/ HTTP/1.1" 200 3710
+[05/Nov/2019 23:29:21] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:21] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:29:21] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /admin/ HTTP/1.1" 200 3710
+[05/Nov/2019 23:29:22] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:29:22] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+Internal Server Error: /admin/core/product/
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: core_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1672, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 744, in get_changelist_instance
+    sortable_by,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/views/main.py", line 82, in __init__
+    self.get_results(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/views/main.py", line 210, in get_results
+    result_count = paginator.count
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/paginator.py", line 91, in count
+    return c()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/query.py", line 392, in count
+    return self.query.get_count(using=self.db)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/query.py", line 504, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/query.py", line 489, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: core_product
+[05/Nov/2019 23:29:25] "GET /admin/core/product/ HTTP/1.1" 500 172280
+Not Found: /favicon.ico
+[05/Nov/2019 23:29:25] "GET /favicon.ico HTTP/1.1" 404 1976
+[05/Nov/2019 23:29:28] "GET /admin/core/product/add/ HTTP/1.1" 200 5725
+[05/Nov/2019 23:29:28] "GET /static/admin/css/forms.css HTTP/1.1" 200 8518
+[05/Nov/2019 23:29:28] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20218
+[05/Nov/2019 23:29:28] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7777
+[05/Nov/2019 23:29:28] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[05/Nov/2019 23:29:28] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[05/Nov/2019 23:29:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:29:28] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[05/Nov/2019 23:29:28] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[05/Nov/2019 23:29:28] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[05/Nov/2019 23:29:28] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+Not Found: /favicon.ico
+[05/Nov/2019 23:29:28] "GET /favicon.ico HTTP/1.1" 404 1976
+[05/Nov/2019 23:29:37] "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 1094
+Internal Server Error: /admin/core/product/add/
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: core_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1088, in save_model
+    obj.save()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: core_product
+[05/Nov/2019 23:29:49] "POST /admin/core/product/add/ HTTP/1.1" 500 186177
+Internal Server Error: /admin/core/product/add/
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: core_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1088, in save_model
+    obj.save()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: core_product
+[05/Nov/2019 23:29:53] "POST /admin/core/product/add/ HTTP/1.1" 500 186205
+Internal Server Error: /admin/core/product/add/
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: core_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1088, in save_model
+    obj.save()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: core_product
+[05/Nov/2019 23:30:04] "POST /admin/core/product/add/ HTTP/1.1" 500 186178
+Internal Server Error: /admin/core/product/add/
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: core_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 606, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/sites.py", line 223, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1634, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1561, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/contrib/admin/options.py", line 1088, in save_model
+    obj.save()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py", line 383, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: core_product
+[05/Nov/2019 23:30:13] "POST /admin/core/product/add/ HTTP/1.1" 500 186179
+^C(projeto) bash-3.2 python manage.py makemigrations core
+Migrations for 'core':
+  core/migrations/0001_initial.py
+    - Create model Product
+(projeto) bash-3.2$  python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, sessions
+Running migrations:
+  Applying core.0001_initial... OK
+(projeto) bash-3.2$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:30:43
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:30:51] "GET / HTTP/1.1" 200 16348
+[05/Nov/2019 23:30:52] "GET /admin/ HTTP/1.1" 200 3710
+[05/Nov/2019 23:30:53] "GET /admin/ HTTP/1.1" 200 3710
+[05/Nov/2019 23:30:56] "GET /admin/core/product/ HTTP/1.1" 200 3169
+[05/Nov/2019 23:30:56] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:30:56] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[05/Nov/2019 23:30:56] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:30:58] "GET /admin/core/product/add/ HTTP/1.1" 200 5725
+[05/Nov/2019 23:30:58] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:31:08] "POST /admin/core/product/add/ HTTP/1.1" 302 0
+[05/Nov/2019 23:31:08] "GET /admin/core/product/ HTTP/1.1" 200 4509
+[05/Nov/2019 23:31:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:31:08] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[05/Nov/2019 23:31:32] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:31:32] "GET /admin/core/product/add/ HTTP/1.1" 200 5725
+[05/Nov/2019 23:31:42] "POST /admin/core/product/add/ HTTP/1.1" 302 0
+[05/Nov/2019 23:31:42] "GET /admin/core/product/ HTTP/1.1" 200 4729
+[05/Nov/2019 23:31:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 390, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 399, in check
+    for pattern in self.url_patterns:
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py", line 18, in <module>
+    from core.urls import core_urls
+ModuleNotFoundError: No module named 'core.urls'
+
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 390, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 399, in check
+    for pattern in self.url_patterns:
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py", line 18, in <module>
+    from .core.urls import core_urls
+ModuleNotFoundError: No module named 'home_stock.core'
+
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/autoreload.py", line 54, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/commands/runserver.py", line 117, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 390, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/management/base.py", line 377, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/registry.py", line 72, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 399, in check
+    for pattern in self.url_patterns:
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 584, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/utils/functional.py", line 80, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/site-packages/django/urls/resolvers.py", line 577, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/Simone/.local/share/virtualenvs/projeto-vNv76R2r/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py", line 22, in <module>
+    path('', include(core_urls)),
+NameError: name 'include' is not defined
+
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/home_stock/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:56:05
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:56:06] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:56:06] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:56:06] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[05/Nov/2019 23:56:06] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[05/Nov/2019 23:56:06] "GET / HTTP/1.1" 200 92
+[05/Nov/2019 23:57:17] "GET / HTTP/1.1" 200 92
+[05/Nov/2019 23:57:18] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:57:18] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/Nov/2019 23:57:18] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/Nov/2019 23:57:18] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:57:18] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/Nov/2019 23:57:18] "GET /admin/ HTTP/1.1" 200 4310
+[05/Nov/2019 23:57:18] "GET /admin/ HTTP/1.1" 200 4310
+[05/Nov/2019 23:57:21] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[05/Nov/2019 23:57:21] "GET /admin/auth/group/ HTTP/1.1" 200 3503
+[05/Nov/2019 23:57:22] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:57:27] "GET /admin/core/product/ HTTP/1.1" 200 4549
+[05/Nov/2019 23:57:27] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+/Users/Simone/Documents/Simone/Python/Curso_Fuctura/Modulo_2/projeto/core/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 05, 2019 - 23:59:07
+Django version 2.2.7, using settings 'home_stock.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[05/Nov/2019 23:59:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3223
+[05/Nov/2019 23:59:24] "GET /admin/core/product/ HTTP/1.1" 200 4549
+[05/Nov/2019 23:59:26] "GET / HTTP/1.1" 200 92
+[05/Nov/2019 23:59:26] "GET / HTTP/1.1" 200 92
+[05/Nov/2019 23:59:28] "GET / HTTP/1.1" 200 92
+
